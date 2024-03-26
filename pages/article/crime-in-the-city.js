@@ -125,7 +125,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
         sameAs: ['https://crimemagazine.vercel.app/']
       },
       {
-        '@type': 'Article',
+        '@type': 'NewsArticle',
         '@id': `${articles.url}#article`,
         headline: `${articles.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
