@@ -1,0 +1,95 @@
+/* Header.module.css */
+
+.header {
+    background-color: #eeebeb; /* Dark grey-blue */
+    color: #fff; /* White */
+    padding: 1rem;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    max-width: 450px; /* Adjust the max-width as needed */
+  }
+  
+  .socialLinks {
+    display: flex;
+    align-items: center;
+  }
+  
+  .socialLinks a {
+    margin-right: 1rem;
+    color: #fff; /* White */
+    cursor: pointer;
+  }
+  
+  .socialLinks a img {
+    width: 40px; /* Adjust the width of the social icons */
+ 
+    height: auto;
+  }
+  
+  .menuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff; /* White */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600; /* Semi-bold */
+  }
+  
+  .menuButton:hover {
+    color: #fbd38d; /* Light gold on hover */
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu li {
+    margin-right: 1rem;
+  }
+  
+  .menu a {
+    color: #fff; /* White */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600; /* Semi-bold */
+  }
+  
+  .menu a:hover {
+    color: #fbd38d; /* Light gold on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .menuButton {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      background-color: #fff; /* Dark grey-blue */
+      width: 100%;
+      padding: 1rem 0;
+      z-index: 1;
+    }
+  
+    .menu.open {
+      display: flex;
+    }
+  
+    .menu li {
+      margin: 0.5rem 0;
+    }
+  }
+  

@@ -1,0 +1,47 @@
+@media screen and (max-width: 600px) {
+    /* your CSS styles for smaller screens */
+  }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* your CSS styles for medium-sized screens */
+  }
+  @media screen and (min-width: 1200px) {
+    /* your CSS styles for larger screens */
+  }
+  @media (max-device-width: 768px) {
+    /* your CSS styles for smaller devices */
+  }
+  @media (min-device-width: 1024px) {
+    /* your CSS styles for larger devices */
+  }
+  @media (orientation: landscape) {
+    /* your CSS styles for landscape mode */
+  }
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }            
+  @media (max-width: 768px) {
+    /* CSS styles for screens with a maximum width of 768px */
+  }
+  /* styles.module.css */
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  

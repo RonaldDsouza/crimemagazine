@@ -1,0 +1,156 @@
+/* ./styles/ComingPop.module.css */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.content-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-container h2 {
+  font-size: 100px;
+  font-weight: 900;
+  margin: 10px;
+  font-family: 'Poppins, sans-serif';
+  color: white; /* Set text color to white */
+}
+
+.timing {
+  font-size: 40px;
+  font-weight: bold;
+  color: white; /* Set text color to white */
+}
+
+.popup-container p {
+  margin: 0 auto;
+  width: 35%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.9;
+  padding: 15px 0;
+  color: white; /* Set text color to white */
+}
+
+.popup-container a {
+  text-decoration: none;
+  background: #fff;
+  color: #111;
+  padding: 10px 35px;
+  border-radius: 50px;
+}
+
+.close-button {
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding: 10px 20px;
+  background-color: #eaeaea;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  background: #fff;
+  color: #111;
+  padding: 10px 35px;
+  border-radius: 50px;
+}
+
+.close-button:hover {
+  background-color: #ccc;
+}
+
+/* ./styles/Coming.module.css */
+.content-container {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  background: #0006;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.timing {
+  font-size: 40px;
+  color: white; /* Set text color to white */
+}
+
+.content h2 {
+  font-size: 100px;
+  font-weight: 900;
+  margin: 10px;
+  font-family: 'Poppins, sans-serif';
+  color: white; /* Set text color to white */
+}
+
+.content a {
+  text-decoration: none;
+  background: #fff;
+  color: #111;
+  padding: 10px 35px;
+  border-radius: 50px;
+}
+
+.content p {
+  margin: 0 auto;
+  width: 35%;
+  text-align: center;
+  font-size: 15px;
+  text-transform: none;
+  font-weight: 400;
+  line-height: 1.9;
+  padding: 15px 0;
+  color: white; /* Set text color to white */
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+@media (min-width: 768px) and (max-width: 991px) {
+  .content p {
+    width: 70%;
+  }
+}
+/* 
+@media (max-width: 767px) {
+  .content h2 {
+    font-size: 40px;
+  }
+  .timing {
+    font-size: 25px;
+  }
+  .content p {
+    width: 95%;
+  }
+} */
