@@ -100,9 +100,9 @@ const CrimeInTheCityPage = ({ title, content }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${articles.url}#webpage`,
-        url: `${articles.url}`,
-        name: `${articles.name} | Crime Magazine`,
+        '@id': `${articleData.url}#webpage`,
+        url: `${articleData.url}`,
+        name: `${articleData.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
@@ -126,8 +126,8 @@ const CrimeInTheCityPage = ({ title, content }) => {
       },
       {
         '@type': 'NewsArticle',
-        '@id': `${articles.url}#article`,
-        headline: `${articles.name} | Crime Magazine`,
+        '@id': `${articleData.url}#article`,
+        headline: `${articleData.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'Movie',
@@ -138,20 +138,20 @@ const CrimeInTheCityPage = ({ title, content }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
-        image: articles.image,
-        name: `Watch ${articles.name} | Crime Magazine`,
+        image: articleData.image,
+        name: `Watch ${articleData.name} | Crime Magazine`,
         isPartOf: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${articleData.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${articleData.url}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${articles.url}#blogPost`,
-        headline: `${articles.name} | Crime Magazine`,
+        '@id': `/${articleData.url}#blogPost`,
+        headline: `${articleData.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'Movie',
@@ -162,27 +162,28 @@ const CrimeInTheCityPage = ({ title, content }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
-        image: articles.image,
-        name: `Watch ${articles.name} | Crime Magazine`,
-        '@id': `${articles.url}#richSnippet`,
+        image: articleData.image,
+        name: `Watch ${articleData.name} | Crime Magazine`,
+        '@id': `${articleData.url}#richSnippet`,
         isPartOf: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${articleData.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${articleData.url}#webpage`
         }
       }
     ]
   });
   
+  
   const ldJsonData = JSON.stringify(
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: articles.name,
-      description: articles.description,
-      keywords: articles.keywords,
+      name: articleData.name,
+      description: articleData.description,
+      keywords: articleData.keywords,
       url: 'https://crimemagazine.vercel.app/article/crime-in-the-city'
     },
     {
