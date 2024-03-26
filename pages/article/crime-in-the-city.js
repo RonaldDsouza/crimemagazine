@@ -7,7 +7,7 @@ import BreakingNews from '@components/BreakingNews'
 import AutoDeleteArticle from '@components/AutoDeleteArticle'
 import Head from 'next/head'
 
-const crime_in_the_city = ({ title, content }) => {
+const CrimeInTheCityPage = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleAccordion = () => {
@@ -100,8 +100,8 @@ const crime_in_the_city = ({ title, content }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${articles['articles.url']}#webpage`,
-        url: `/${articles['articles.url']}`,
+        '@id': `${articles.url}#webpage`,
+        url: `${articles.url}`,
         name: `${articles.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -126,7 +126,7 @@ const crime_in_the_city = ({ title, content }) => {
       },
       {
         '@type': 'Article',
-        '@id': `/${articles['articles.url']}#article`,
+        '@id': `${articles.url}#article`,
         headline: `${articles.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -141,16 +141,16 @@ const crime_in_the_city = ({ title, content }) => {
         image: articles.image,
         name: `Watch ${articles.name} | Crime Magazine`,
         isPartOf: {
-          '@id': `/${articles['articles.url']}#webpage`
+          '@id': `${articles.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${articles['articles.url']}#webpage`
+          '@id': `${articles.url}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${articles['articles.url']}#blogPost`,
+        '@id': `/${articles.url}#blogPost`,
         headline: `${articles.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -164,25 +164,25 @@ const crime_in_the_city = ({ title, content }) => {
         description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
         image: articles.image,
         name: `Watch ${articles.name} | Crime Magazine`,
-        '@id': `/${articles['articles.url']}#richSnippet`,
+        '@id': `${articles.url}#richSnippet`,
         isPartOf: {
-          '@id': `/${articles['articles.url']}#webpage`
+          '@id': `${articles.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${articles['articles.url']}#webpage`
+          '@id': `${articles.url}#webpage`
         }
       }
     ]
-  })
-
+  });
+  
   const ldJsonData = JSON.stringify(
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: articles && articles.name,
-      description: articles && articles.description,
-      keywords: articles && articles.keywords,
+      name: articles.name,
+      description: articles.description,
+      keywords: articles.keywords,
       url: 'https://crimemagazine.vercel.app/article/crime-in-the-city'
     },
     {
@@ -574,7 +574,7 @@ const crime_in_the_city = ({ title, content }) => {
   )
 }
 
-export default crime_in_the_city;
+export default CrimeInTheCityPage;
 
 async function fetchArticleData (articleId) {
   try {
