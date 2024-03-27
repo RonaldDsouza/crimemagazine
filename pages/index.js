@@ -119,12 +119,8 @@ export default function Home ({ articles }) {
           content='Crime Magazine | The Darkest Crime And Evil Minds.'
         />
         <link rel='icon' href='/favicon.ico' />
-        <meta
-          name='description'
-          content='Crime Magazine | The Darkest Crime And Evil Minds.'
-        />
+        <meta property="og:locale" content="en_US" />
         <meta name='keywords' content="india news, india news headlines, india local news, india daily news, india newspaper, latest news, india headlines, india news today, india news, top news, breaking news, current news, current news updates, news updates, online newspaper, bollywood, sports, life and style, crime, news portal "/>
-
         <meta
           property='og:title'
           content='Crime Magazine | The Darkest Crime And Evil Minds.'
@@ -135,16 +131,21 @@ export default function Home ({ articles }) {
         />
         <meta property='og:site_name' content='Crime Magazine' />
         <meta property='og:type' content='website' />
+        <meta property="og:type" content="article" />
+        <meta name="mobile-web-app-capable" content="yes">
         <meta property='og:url' content='https://crimemagazine.vercel.app/' />
         <meta property='og:image' content='https://crimemagazine.vercel.app/article-image.jpg' />
-        <meta property='og:image:type' content='image/png' />
+        <meta property='og:image:type' content='image/jpg' />
         <meta name='dailymotion-domain-verification' content='dmqy1s4atw72q97l8' />
+        <link rel="manifest" href="/site.webmanifest">
         <meta property='fb:page_id' content='101982830708' />
         <meta property='fb:app_id' content='854936678691784' />
-        <meta name='twitter:site' content='@mid_day' />
+        <meta name='twitter:site' content='@crime_mag_id' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='robots' content='index, follow, noodp, noydir' />
         <link rel='canonical' href='https://crimemagazine.vercel.app/' />
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="https://crimemagazine.vercel.app/sitemap.xml" />
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
         <meta name="google-site-verification" content="49WAkeHVyYLOO41vqw4JPOE4QOR244MUbadgZ4k3WcE" />
      
         <script
