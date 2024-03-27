@@ -1,0 +1,21 @@
+# Disable directory browsing
+Options -Indexes
+
+# Force HTTPS
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block access to sensitive files
+<Files ".env">
+Order allow,deny
+Deny from all
+</Files>
+
+# Set custom error pages
+ErrorDocument 404 /404.html
+
+# Prevent image hotlinking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?uwatchfree.vercel.app [NC]
+RewriteRule \.(jpg|jpeg|png|gif)$ - [NC,F,L]
