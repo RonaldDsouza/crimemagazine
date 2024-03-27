@@ -90,7 +90,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
         'url': `${article.url}`,
         'articleBody': `${article.articleBody}`,
         'articleSection': `${article.articleSection}`,
-        'headline': `${article.headline}`,
+        'headline': `${article.title}`,
         'description': `${article.description}`,
         'keywords': [`${article.keywords}`],
         'author': {
@@ -101,8 +101,8 @@ const CrimeInTheCityPage = ({ title, content }) => {
         'dateModified': `${article.dateModified}`,
         'image': {
           '@type': 'ImageObject',
-          'width': '788px',
-          'height': '443px',
+          'width': '1280px',
+          'height': '720px',
           'url': `${article.image}`
         },
         'publisher': {
@@ -110,8 +110,8 @@ const CrimeInTheCityPage = ({ title, content }) => {
           'name': 'Crime Magazine',
           'logo': {
             '@type': 'ImageObject',
-            'width': '365px',
-            'height': '83px',
+            'width': '400px',
+            'height': '100px',
             'url': 'https://crimemagazine.vercel.app/logo.png'
           },
           'url': 'https://crimemagazine.vercel.app/'
@@ -215,9 +215,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
           '@id': `${article.url}#webpage`
         },
         inLanguage: 'en-US',
-        mainEntityOfPage: {
-          '@id': "https://crimemagazine.vercel.app"
-        }
+      
       }
     ]
   });
