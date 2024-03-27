@@ -7,46 +7,32 @@ const contact = () => {
   return (
     <div>
         <Head>
-        <title>Watch Movies Online™ Contact Us</title>
+        <title>Crime Magazine | Contact Us</title>
       
-	<meta name="description" content="Watch
- now the Best TV shows and Movies " />
+	<meta name="description" content="Crime Magazine | The Darkest Crime And Evil Minds. " />
 	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<meta name="keywords" content="Watch Movies Online,streaming,latest movies,online tv,latest free movies,watch latest movies online,latest full movies online" />
+  <meta name='keywords' content="india news, india news headlines, india local news, india daily news, india newspaper, latest news, india headlines, india news today, india news, top news, breaking news, current news, current news updates, news updates, online newspaper, bollywood, sports, life and style, crime, news portal "/>
 	<meta name="revisit-after" content="1 days" />
 	<meta property="og:locale" content="en_US" />   
-
 <meta name="robots" content="index, follow" />  
 <meta name="revisit-after" content="1 days" />
-  <meta name="robots" content="index, follow" />
-	
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-	<meta property="og:site_name" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
+	<meta property="og:site_name" content="Crime Magazine | The Darkest Crime And Evil Minds. " />
 	<meta property="og:type" content="website" />
 	<meta property="og:image:height" content="1280"/>
 	<meta property="og:image:width" content="720"/>
-	<meta property="og:title" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta property="og:description" content="Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta property="og:url" content="https://watchonlinemovies.vercel.app/" />
+	<meta property="og:title" content="Crime Magazine | The Darkest Crime And Evil Minds. " />
+	<meta property="og:description" content="Crime Magazine | The Darkest Crime And Evil Minds. " />
+	<meta property="og:url" content="https://crimemagazine.vercel.app/" />
 	<meta property="og:image:type" content="image/jpeg" />
-	<meta property='og:image' content="https://watchonlinemovies.vercel.app/og_image.jpg" />
-	<meta property="og:image:secure_url" content="https://watchonlinemovies.vercel.app/og_image.jpg" />
+	<meta property='og:image' content="https://crimemagazine.vercel.app/og_image.jpg" />
+	<meta property="og:image:secure_url" content="https://crimemagazine.vercel.app/og_image.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Watch Movies Online™ " />
-	<meta name="twitter:description" content=" Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta name="twitter:image" content="https://watchonlinemovies.vercel.app/og_image.jpg" />
-  
-  
-  <meta name="google-site-verification" content="WQh7UdOVLh--PluVaU8U1m1IHrAPjaWmaItVOdek8tg" />
-  <link rel="alternate" hrefLang="en-us" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-gb" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-ca" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-au" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-se" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-fr" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-dk" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-no" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="x-default" 	href="https://watchonlinemovies.vercel.app/"/>
+	<meta name="twitter:title" content="Crime Magazine | The Darkest Crime And Evil Minds. " />
+	<meta name="twitter:description" content=" Crime Magazine | The Darkest Crime And Evil Minds. " />
+	<meta name="twitter:image" content="https://crimemagazine.vercel.app/og_image.jpg" />
+   
+  <meta name="google-site-verification" content="49WAkeHVyYLOO41vqw4JPOE4QOR244MUbadgZ4k3WcE" />
       </Head>
 {/* <Script src="../../propler/ads.js" defer /> */}
   
@@ -62,7 +48,7 @@ const contact = () => {
       </p>
       <p className="text-gray-500 mb-2">We will Get Back You ASAP.</p>
   
-      <p className="text-gray-500 mb-2">drtrailer2022@gmail.com</p>
+      <p className="text-gray-500 mb-2">crimemagazineid@gmail.com</p>
     </div>
     <div className="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
       <form>

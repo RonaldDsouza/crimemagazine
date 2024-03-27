@@ -10,7 +10,7 @@ export default function Home ({ articles }) {
   "@type": "Organization",
   "name": "Crime Magazine | The Darkest Crime And Evil Minds.",
   "url": "https://crimemagazine.vercel.app/",
-  "logo": "https://crimemagazine.vercel.app/logo.png",
+  "logo": "https://crimemagazine.vercel.app/article-image.png",
   "description": "Welcome to Crime Magazine. Our premier destination for in-depth coverage of crime-related news in India.",
   "sameAs": [
     "https://crimemagazine.vercel.app/",
@@ -35,7 +35,7 @@ export default function Home ({ articles }) {
     "name": "Crime Magazine",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://crimemagazine.vercel.app/logo.png"
+      "url": "https://crimemagazine.vercel.app/article-image.jpg"
     }
   }
 }
@@ -81,7 +81,7 @@ export default function Home ({ articles }) {
   "@type": "NewsArticle",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://crimemagazine.vercel.app/article/my-article"
+    "@id": "https://crimemagazine.vercel.app/"
   },
   "headline": "Crime Magazine | The Darkest Crime And Evil Minds.",
   "image": [
@@ -98,7 +98,7 @@ export default function Home ({ articles }) {
     "name": "Crime Magazine",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://crimemagazine.vercel.app/logo.png"
+      "url": "https://crimemagazine.vercel.app/article-image.jpg"
     }
   },
   "description": " Welcome to Crime Magazine, your premier destination for in-depth coverage of crime-related news in India. Our platform curates the most compelling stories from reliable sources, offering a comprehensive look into the world of crime. Through a blend of audio, video, and images sourced from reputable channels, we strive to present the truth behind each incident."
@@ -120,6 +120,7 @@ export default function Home ({ articles }) {
         />
         <link rel='icon' href='/favicon.ico' />
         <meta property="og:locale" content="en_US" />
+        <meta name="revisit-after" content="1 days" />
         <meta name='keywords' content="india news, india news headlines, india local news, india daily news, india newspaper, latest news, india headlines, india news today, india news, top news, breaking news, current news, current news updates, news updates, online newspaper, bollywood, sports, life and style, crime, news portal "/>
         <meta
           property='og:title'
