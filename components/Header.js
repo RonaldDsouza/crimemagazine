@@ -250,7 +250,7 @@ export default function Home () {
                   Home
                 </div>
               </a>
-              <a href='/intro/contact'>
+              <a href='/intro/about'>
                 <div
                   className='block mt-4 md:inline-block md:mt-0 text-white hover:text-gray-400 mr-4 font-bold'
                   style={{ fontSize: '20px', textShadow: '2px 5px 5px #2b2 ' }}
@@ -258,7 +258,7 @@ export default function Home () {
                   About
                 </div>
               </a>
-              <a href='/intro/privacy'>
+              <a href='/intro/contact'>
                 <div
                   className='block mt-4 md:inline-block md:mt-0 text-white hover:text-gray-400 mr-4 font-bold'
                   style={{ fontSize: '20px', textShadow: '2px 5px 5px #2b2 ' }}
