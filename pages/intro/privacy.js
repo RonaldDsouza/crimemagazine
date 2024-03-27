@@ -27,26 +27,26 @@ const Privacy = () => {
 	<meta property="og:image:width" content="720"/>
 	<meta property="og:title" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
 	<meta property="og:description" content="Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta property="og:url" content="https://watchonlinemovies.vercel.app/" />
+	<meta property="og:url" content="https://crimemagazine.vercel.app/" />
 	<meta property="og:image:type" content="image/jpeg" />
-	<meta property='og:image' content="https://watchonlinemovies.vercel.app/og_image.jpg" />
-	<meta property="og:image:secure_url" content="https://watchonlinemovies.vercel.app/og_image.jpg" />
+	<meta property='og:image' content="https://crimemagazine.vercel.app/og_image.jpg" />
+	<meta property="og:image:secure_url" content="https://crimemagazine.vercel.app/og_image.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Watch Movies Online™ " />
 	<meta name="twitter:description" content=" Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta name="twitter:image" content="https://watchonlinemovies.vercel.app/og_image.jpg" />
+	<meta name="twitter:image" content="https://crimemagazine.vercel.app/og_image.jpg" />
 	
   
   <meta name="google-site-verification" content="WQh7UdOVLh--PluVaU8U1m1IHrAPjaWmaItVOdek8tg" />
-  <link rel="alternate" hrefLang="en-us" 	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-gb"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-ca"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-au"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-se"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-fr"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-dk"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-no"	href="https://watchonlinemovies.vercel.app/"/>
-	<link rel="alternate" hrefLang="x-default"	href="https://watchonlinemovies.vercel.app/"/>
+  <link rel="alternate" hrefLang="en-us" 	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-gb"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-ca"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-au"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-se"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-fr"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-dk"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="en-no"	href="https://crimemagazine.vercel.app/"/>
+	<link rel="alternate" hrefLang="x-default"	href="https://crimemagazine.vercel.app/"/>
       </Head>
 {/* <Script src="../../propler/ads.js" defer /> */}
  
