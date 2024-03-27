@@ -31,15 +31,54 @@ const about = () => {
        
       </Head>
 
-      <div className="container my-24 px-6 mx-auto">
+      <main className='container mx-auto py-8 px-4'>
+        <h1
+          className='text-4xl font-bold text-center mb-8'
+          style={{
+            color: '#FF0000',
+
+            justifyContent: 'center',
+            alignItems: 'center',
+
+            textShadow: '3px 5px 5px #000',
+
+            fontWeight: 'bold'
+          }}
+        >
+          Welcome to Crime Magazine.
+        </h1>
+        <p className="text-lg text-center mb-8"  style={{
+              textShadow: '1px 1px 1px #000',
+                      
+            }}>
+    Welcome to Crime Magazine, your premier destination for in-depth coverage of crime-related news in India. Our platform curates the most compelling stories from reliable sources, offering a comprehensive look into the world of crime. Through a blend of audio, video, and images sourced from reputable channels, we strive to present the truth behind each incident.
+
+    From high-profile cases to lesser-known events, we delve deep into the details, providing our readers with a nuanced understanding of the crime landscape in India. Our commitment to accuracy and reliability ensures that every story we deliver is thoroughly researched and fact-checked.
+
+    At Crime Magazine, we aim to shed light on the complexities of crime while offering insights into its impact on society. Join us as we uncover the truth behind the headlines and explore the realities of the crime world in India.
+  </p>
+       
+  <div className="container my-24 px-6 mx-auto">
         <p className="text-gray-500 mb-6">
           Please Contact the Email ID :
-          crimemagazineid@gmail.com
-        </p>
-        {/* Add your content here */}
-      </div>
+         crimemagazineid@gmail.com
+       </p>
+       {/* Add your content here */}
+     </div>
+      </main>
     </div>
-  );
+  )
 }
+
+//       <div className="container my-24 px-6 mx-auto">
+//         <p className="text-gray-500 mb-6">
+//           Please Contact the Email ID :
+//           crimemagazineid@gmail.com
+//         </p>
+//         {/* Add your content here */}
+//       </div>
+//     </div>
+//   );
+// }
 
 export default about;
