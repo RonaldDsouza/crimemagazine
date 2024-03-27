@@ -84,6 +84,76 @@ const CrimeInTheCityPage = ({ title, content }) => {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@context': 'https://schema.org',
+        'mainEntityOfPage': `${article.url}`,
+        '@type': 'NewsArticle',
+        'url': `${article.url}`,
+        'articleBody': `${article.articleBody}`,
+        'articleSection': `${article.articleSection}`,
+        'headline': `${article.headline}`,
+        'description': `${article.description}`,
+        'keywords': [`${article.keywords}`],
+        'author': {
+          '@type': 'Person',
+          'name': `${article.author}`
+        },
+        'datePublished': `${article.datePublished}`,
+        'dateModified': `${article.dateModified}`,
+        'image': {
+          '@type': 'ImageObject',
+          'width': '788px',
+          'height': '443px',
+          'url': `${article.image}`
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'Crime Magazine',
+          'logo': {
+            '@type': 'ImageObject',
+            'width': '365px',
+            'height': '83px',
+            'url': 'https://crimemagazine.vercel.app/logo.png'
+          },
+          'url': 'https://crimemagazine.vercel.app/'
+        }
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': '1',
+            'item': {
+              '@id': 'https://crimemagazine.vercel.app',
+              'name': 'Home'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': '2',
+            'item': {
+              '@id': 'https://crimemagazine.vercel.app/about',
+              'name': 'About'
+            }
+          },
+          {
+            '@type': 'ListItem',
+            'position': '3',
+            'item': {
+              '@id': 'https://crimemagazine.vercel.app/contact',
+              'name': 'Contact'
+            }
+          }
+        ]
+      }
+    ]
+  });
+  
+  const blogSchema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
         '@type': ['Person', 'Organization'],
         '@id': 'https://gravatar.com/drtrailer2022/#person',
         name: 'Dr Trailer'
@@ -92,7 +162,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
         '@type': 'WebSite',
         '@id': 'https://crimemagazine.vercel.app/#website',
         url: 'https://crimemagazine.vercel.app/',
-        name: 'Crime Magazine',
+        name: 'Crime Magazine™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -102,9 +172,9 @@ const CrimeInTheCityPage = ({ title, content }) => {
         '@type': 'WebPage',
         '@id': `${article.url}#webpage`,
         url: `${article.url}`,
-        name: `${article.name} | Crime Magazine`,
-        datePublished: '2024-01-13T13:00:00+00:00',
-        dateModified: '2024-01-13T13:13:00+00:00',
+        name: `${article.name} | Crime Magazine™`,
+        datePublished:  `${article.datePublished}`,
+        dateModified: `${article.dateModified}`,
         isPartOf: {
           '@id': 'https://crimemagazine.vercel.app/#website'
         },
@@ -125,98 +195,66 @@ const CrimeInTheCityPage = ({ title, content }) => {
         sameAs: ['https://crimemagazine.vercel.app/']
       },
       {
-        '@type': 'Article',
-        '@id': `${article.url}#article`,
-        headline: `${article.name} | Crime Magazine`,
-        datePublished: '2024-01-13T13:00:00+00:00',
-        dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'News',
-        author: {
-          '@id': 'https://crimemagazine.vercel.app/author/watchmoviesonline/'
-        },
-        publisher: {
-          '@id': 'https://gravatar.com/drtrailer2022/#person'
-        },
-        description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
-        image: article.image,
-        name: `Watch ${article.name} | Crime Magazine`,
-        isPartOf: {
-          '@id': `${article.url}#webpage`
-        },
-        inLanguage: 'en-US',
-        mainEntityOfPage: {
-          '@id': `${article.url}#webpage`
-        }
-      },
-      {
         '@type': 'BlogPosting',
-        '@id': `/${article.url}#blogPost`,
-        headline: `${article.name} | Crime Magazine`,
-        datePublished: '2024-01-13T13:00:00+00:00',
-        dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'Movie',
+        '@id': `${article.url}#blogPost`,
+        headline: `${article.name} | Crime Magazine™`,
+        datePublished: `${article.datePublished}`,
+        dateModified: `${article.dateModified}`,
+        articleSection: `${article.articleSection}`,
         author: {
-          '@id': 'https://crimemagazine.vercel.app/author/watchmoviesonline/'
+          '@id': 'https://crimemagazine.vercel.app/author/crimemagazine/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
+        description: "Welcome to Crime Magazine, your premier destination for in-depth coverage of crime-related news in India. Our platform curates the most compelling stories from reliable sources, offering a comprehensive look into the world of crime. Through a blend of audio, video, and images sourced from reputable channels, we strive to present the truth behind each incident. From high-profile cases to lesser-known events, we delve deep into the details, providing our readers with a nuanced understanding of the crime landscape in India. Our commitment to accuracy and reliability ensures that every story we deliver is thoroughly researched and fact-checked. Join us as we uncover the truth behind the headlines and explore the realities of the crime world in India.",
         image: article.image,
-        name: `Watch ${article.name} | Crime Magazine`,
+        name: `${article.name} | Crime Magazine™`,
         '@id': `${article.url}#richSnippet`,
         isPartOf: {
           '@id': `${article.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${article.url}#webpage`
+          '@id': "https://crimemagazine.vercel.app"
         }
       }
     ]
   });
   
   
-  const ldJsonData = JSON.stringify(
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      name: article.name,
-      description: article.description,
-      keywords: article.keywords,
-      url: 'https://crimemagazine.vercel.app/article/crime-in-the-city'
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: '1',
-          item: {
-            '@id': 'https://crimemagazine.vercel.app',
-            name: 'Home'
-          }
-        },
-        {
-          '@type': 'ListItem',
-          position: '2',
-          item: {
-            '@id': 'https://crimemagazine.vercel.app/about',
-            name: 'About'
-          }
-        },
-        {
-          '@type': 'ListItem',
-          position: '3',
-          item: {
-            '@id': 'https://crimemagazine.vercel.app/contact',
-            name: 'Contact'
-          }
-        }
-      ]
-    }
-  )
+  // const ldJsonData = JSON.stringify(
+  //    {
+  //     '@context': 'https://schema.org',
+  //     '@type': 'BreadcrumbList',
+  //     itemListElement: [
+  //       {
+  //         '@type': 'ListItem',
+  //         position: '1',
+  //         item: {
+  //           '@id': 'https://crimemagazine.vercel.app',
+  //           name: 'Home'
+  //         }
+  //       },
+  //       {
+  //         '@type': 'ListItem',
+  //         position: '2',
+  //         item: {
+  //           '@id': 'https://crimemagazine.vercel.app/about',
+  //           name: 'About'
+  //         }
+  //       },
+  //       {
+  //         '@type': 'ListItem',
+  //         position: '3',
+  //         item: {
+  //           '@id': 'https://crimemagazine.vercel.app/contact',
+  //           name: 'Contact'
+  //         }
+  //       }
+  //     ]
+  //   }
+  // )
 
   return (
     <div
@@ -287,7 +325,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
 
         <script
           type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: ldJsonData }}
+          dangerouslySetInnerHTML={{ __html: blogSchema }}
         />
         <script
           type='application/ld+json'
