@@ -308,10 +308,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
-        <meta
-          name='google-site-verification'
-          content='4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0'
-        />
+        <meta name="google-site-verification" content="49WAkeHVyYLOO41vqw4JPOE4QOR244MUbadgZ4k3WcE" />
         <meta
           name='facebook-domain-verification'
           content='du918bycikmo1jw78wcl9ih6ziphd7'

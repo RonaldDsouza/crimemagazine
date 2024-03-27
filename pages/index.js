@@ -43,6 +43,7 @@ export default function Home ({ articles }) {
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='robots' content='index, follow, noodp, noydir' />
         <link rel='canonical' href='https://crimemagazine.vercel.app/' />
+        <meta name="google-site-verification" content="49WAkeHVyYLOO41vqw4JPOE4QOR244MUbadgZ4k3WcE" />
       </Head>
 
       <main className='container mx-auto py-8 px-4'>
