@@ -10,7 +10,7 @@ function Application ({ Component, pageProps }) {
   return (
     <>
       <div className='center'>
-        <GoogleAnalytics measurementId='G-REYHDZZ5K8' />
+        <GoogleAnalytics measurementId='G-3WP3TWFZBM' />
         {/* Add any other scripts or components needed globally */}
         <PageTransition>
           <Header />
