@@ -32,5 +32,3 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 
-# Local node_modules folder
-/node_modules
