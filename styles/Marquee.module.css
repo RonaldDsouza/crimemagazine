@@ -1,0 +1,19 @@
+.marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .content {
+    animation: marquee 55s linear infinite;
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  
