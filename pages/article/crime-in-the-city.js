@@ -100,9 +100,9 @@ const CrimeInTheCityPage = ({ title, content }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `${articles.url}#webpage`,
-        url: `${articles.url}`,
-        name: `${articles.name} | Crime Magazine`,
+        '@id': `${article.url}#webpage`,
+        url: `${article.url}`,
+        name: `${article.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
@@ -126,11 +126,11 @@ const CrimeInTheCityPage = ({ title, content }) => {
       },
       {
         '@type': 'Article',
-        '@id': `${articles.url}#article`,
-        headline: `${articles.name} | Crime Magazine`,
+        '@id': `${article.url}#article`,
+        headline: `${article.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'Movie',
+        articleSection: 'News',
         author: {
           '@id': 'https://crimemagazine.vercel.app/author/watchmoviesonline/'
         },
@@ -138,20 +138,20 @@ const CrimeInTheCityPage = ({ title, content }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
-        image: articles.image,
-        name: `Watch ${articles.name} | Crime Magazine`,
+        image: article.image,
+        name: `Watch ${article.name} | Crime Magazine`,
         isPartOf: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${article.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${article.url}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${articles.url}#blogPost`,
-        headline: `${articles.name} | Crime Magazine`,
+        '@id': `/${article.url}#blogPost`,
+        headline: `${article.name} | Crime Magazine`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'Movie',
@@ -162,15 +162,15 @@ const CrimeInTheCityPage = ({ title, content }) => {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
         description: 'Crime Magazine | The Darkest Crime And Evil Minds.',
-        image: articles.image,
-        name: `Watch ${articles.name} | Crime Magazine`,
-        '@id': `${articles.url}#richSnippet`,
+        image: article.image,
+        name: `Watch ${article.name} | Crime Magazine`,
+        '@id': `${article.url}#richSnippet`,
         isPartOf: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${article.url}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `${articles.url}#webpage`
+          '@id': `${article.url}#webpage`
         }
       }
     ]
@@ -181,9 +181,9 @@ const CrimeInTheCityPage = ({ title, content }) => {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: articles.name,
-      description: articles.description,
-      keywords: articles.keywords,
+      name: article.name,
+      description: article.description,
+      keywords: article.keywords,
       url: 'https://crimemagazine.vercel.app/article/crime-in-the-city'
     },
     {
@@ -230,8 +230,8 @@ const CrimeInTheCityPage = ({ title, content }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch {articles && articles.name} | Crime Magazine</title>
-        <link rel='canonical' href={articles && articles.url} />
+        <title> Watch {article && article.name} | Crime Magazine</title>
+        <link rel='canonical' href={article && article.url} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
         <meta name='revisit-after' content='1 days' />
@@ -239,20 +239,20 @@ const CrimeInTheCityPage = ({ title, content }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${articles && articles.name} - Crime Magazine`}
+          content={`${article && article.name} - Crime Magazine`}
         />
         <meta
           property='og:description'
           content={`${
-            articles && articles.name
+            article && article.name
           } | The Darkest Crime And Evil Minds`}
         />
         <meta
           name='description'
           content='Crime Magazine | The Darkest Crime And Evil Minds.'
         />
-        <meta property='og:url' content={`${articles && articles.url}`} />
-        <meta name='keywords' content={`${articles && articles.keywords}`} />
+        <meta property='og:url' content={`${article && article.url}`} />
+        <meta name='keywords' content={`${article && article.keywords}`} />
         <meta property='og:site_name' content='Crime Magazine' />
         <meta property='og:type' content='article' />
         <meta name='mobile-web-app-capable' content='yes' />
