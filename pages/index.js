@@ -136,7 +136,7 @@ export default function Home ({ articles }) {
         <meta property='og:site_name' content='Crime Magazine' />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://crimemagazine.vercel.app/' />
-        <meta property='og:image' content='https://crimemagazine.vercel.app/logo.png' />
+        <meta property='og:image' content='https://crimemagazine.vercel.app/article-image.jpg' />
         <meta property='og:image:type' content='image/png' />
         <meta name='dailymotion-domain-verification' content='dmqy1s4atw72q97l8' />
         <meta property='fb:page_id' content='101982830708' />
