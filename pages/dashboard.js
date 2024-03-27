@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 
 const Dashboard = () => {
   const [reportData, setReportData] = useState(null)
+  const [articlesAddedPerMonth, setArticlesAddedPerMonth] = useState(0);
+  const [articlesAddedPerWeek, setArticlesAddedPerWeek] = useState(0);
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [authenticated, setAuthenticated] = useState(false)
@@ -33,7 +35,7 @@ const Dashboard = () => {
     category: '',
     sources: '',
     tags: [],
-    video: '',
+    video: [],
     audio: '',
     images: []
   })
@@ -132,7 +134,7 @@ const Dashboard = () => {
         category: '',
         sources: '',
         tags: [],
-        video: '',
+        video:[],
         audio: '',
         images: []
       })
@@ -181,20 +183,20 @@ const Dashboard = () => {
       <div>
         <h1>Login</h1>
         <input
-          type='text'
-          placeholder='Username'
+          type="text"
+          placeholder="Username"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
         <input
-          type='password'
-          placeholder='Password'
+          type="password"
+          placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
         <button onClick={handleLogin}>Login</button>
       </div>
-    )
+    );
   }
 
   return (
@@ -419,10 +421,14 @@ const Dashboard = () => {
             />
             <input
               type='text'
-              placeholder='Video'
-              value={newArticle.video}
+              placeholder='Video (Enter URLs separated by spaces or commas)'
+              value={newArticle.video.join(',')}
               onChange={e =>
-                setNewArticle({ ...newArticle, video: e.target.value })
+                setNewArticle({
+                  ...newArticle,
+                  video: e.target.value.split(/[,\s]+/)
+                })
+              
               }
             />
             <input
