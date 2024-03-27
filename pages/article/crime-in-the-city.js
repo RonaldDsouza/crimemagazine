@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,useRef } from 'react'
 import styles from '@styles/video-player.module.css'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -25,6 +25,70 @@ const CrimeInTheCityPage = ({ title, content }) => {
         console.error('Error fetching article data:', error)
       })
   }, [])
+
+  // const videoId = article && article.video
+
+  // useEffect(() => {
+  //   // Initialize the YouTube Player API
+  //   const tag = document.createElement('script')
+  //   tag.src = 'https://www.youtube.com/iframe_api'
+  //   const firstScriptTag = document.getElementsByTagName('script')[0]
+  //   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+
+  //   // Create the player when the API is ready
+  //   window.onYouTubeIframeAPIReady = () => {
+  //     new window.YT.Player('youtube-player', {
+  //       height: '360',
+  //       width: '640',
+  //       videoId: videoId, // Pass the extracted video ID
+  //       playerVars: {
+  //         autoplay: 1,
+  //         mute: 1,
+  //        playsinline: 1
+  //       }
+  //     })
+  //   }
+  // }, [videoId])
+
+  const videoIds = article && article.video; // Assuming article.video is an array of video IDs
+  const playerRef = useRef(null); // Reference to the YouTube player instance
+  const currentIndexRef = useRef(0); // Reference to keep track of the current video index
+
+  useEffect(() => {
+    // Initialize the YouTube Player API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Create the player when the API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      // Create a new player instance
+      playerRef.current = new window.YT.Player('youtube-player', {
+        height: '360',
+        width: '640',
+        videoId: videoIds[currentIndexRef.current], // Play the first video
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          playsinline: 1,
+          enablejsapi: 1 // Enable JavaScript API for controlling the player
+        },
+        events: {
+          onStateChange: event => {
+            if (event.data === window.YT.PlayerState.ENDED) {
+              // If video has ended, move to the next video or loop back to the beginning
+              currentIndexRef.current = (currentIndexRef.current + 1) % videoIds.length;
+              playerRef.current.loadVideoById({
+                videoId: videoIds[currentIndexRef.current],
+                startSeconds: 0 // Start from the beginning of the next video
+              });
+            }
+          }
+        }
+      });
+    };
+  }, [videoIds]);
 
   if (!article) {
     return (
@@ -85,71 +149,71 @@ const CrimeInTheCityPage = ({ title, content }) => {
     '@graph': [
       {
         '@context': 'https://schema.org',
-        'mainEntityOfPage': `${article.url}`,
+        mainEntityOfPage: `${article.url}`,
         '@type': 'NewsArticle',
-        'url': `${article.url}`,
-        'articleBody': `${article.articleBody}`,
-        'articleSection': `${article.articleSection}`,
-        'headline': `${article.title}`,
-        'description': `${article.description}`,
-        'keywords': [`${article.keywords}`],
-        'author': {
+        url: `${article.url}`,
+        articleBody: `${article.articleBody}`,
+        articleSection: `${article.articleSection}`,
+        headline: `${article.title}`,
+        description: `${article.description}`,
+        keywords: [`${article.keywords}`],
+        author: {
           '@type': 'Person',
-          'name': `${article.author}`
+          name: `${article.author}`
         },
-        'datePublished': `${article.datePublished}`,
-        'dateModified': `${article.dateModified}`,
-        'image': {
+        datePublished: `${article.datePublished}`,
+        dateModified: `${article.dateModified}`,
+        image: {
           '@type': 'ImageObject',
-          'width': '1280px',
-          'height': '720px',
-          'url': `${article.image}`
+          width: '1280px',
+          height: '720px',
+          url: `${article.image}`
         },
-        'publisher': {
+        publisher: {
           '@type': 'Organization',
-          'name': 'Crime Magazine',
-          'logo': {
+          name: 'Crime Magazine',
+          logo: {
             '@type': 'ImageObject',
-            'width': '400px',
-            'height': '100px',
-            'url': 'https://crimemagazine.vercel.app/logo.png'
+            width: '400px',
+            height: '100px',
+            url: 'https://crimemagazine.vercel.app/logo.png'
           },
-          'url': 'https://crimemagazine.vercel.app/'
+          url: 'https://crimemagazine.vercel.app/'
         }
       },
       {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        'itemListElement': [
+        itemListElement: [
           {
             '@type': 'ListItem',
-            'position': '1',
-            'item': {
+            position: '1',
+            item: {
               '@id': 'https://crimemagazine.vercel.app',
-              'name': 'Home'
+              name: 'Home'
             }
           },
           {
             '@type': 'ListItem',
-            'position': '2',
-            'item': {
+            position: '2',
+            item: {
               '@id': 'https://crimemagazine.vercel.app/about',
-              'name': 'About'
+              name: 'About'
             }
           },
           {
             '@type': 'ListItem',
-            'position': '3',
-            'item': {
+            position: '3',
+            item: {
               '@id': 'https://crimemagazine.vercel.app/contact',
-              'name': 'Contact'
+              name: 'Contact'
             }
           }
         ]
       }
     ]
-  });
-  
+  })
+
   const blogSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -173,7 +237,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
         '@id': `${article.url}#webpage`,
         url: `${article.url}`,
         name: `${article.name} | Crime Magazine™`,
-        datePublished:  `${article.datePublished}`,
+        datePublished: `${article.datePublished}`,
         dateModified: `${article.dateModified}`,
         isPartOf: {
           '@id': 'https://crimemagazine.vercel.app/#website'
@@ -207,20 +271,19 @@ const CrimeInTheCityPage = ({ title, content }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: "Welcome to Crime Magazine, your premier destination for in-depth coverage of crime-related news in India. Our platform curates the most compelling stories from reliable sources, offering a comprehensive look into the world of crime. Through a blend of audio, video, and images sourced from reputable channels, we strive to present the truth behind each incident. From high-profile cases to lesser-known events, we delve deep into the details, providing our readers with a nuanced understanding of the crime landscape in India. Our commitment to accuracy and reliability ensures that every story we deliver is thoroughly researched and fact-checked. Join us as we uncover the truth behind the headlines and explore the realities of the crime world in India.",
+        description:
+          'Welcome to Crime Magazine, your premier destination for in-depth coverage of crime-related news in India. Our platform curates the most compelling stories from reliable sources, offering a comprehensive look into the world of crime. Through a blend of audio, video, and images sourced from reputable channels, we strive to present the truth behind each incident. From high-profile cases to lesser-known events, we delve deep into the details, providing our readers with a nuanced understanding of the crime landscape in India. Our commitment to accuracy and reliability ensures that every story we deliver is thoroughly researched and fact-checked. Join us as we uncover the truth behind the headlines and explore the realities of the crime world in India.',
         image: article.image,
         name: `${article.name} | Crime Magazine™`,
         '@id': `${article.url}#richSnippet`,
         isPartOf: {
           '@id': `${article.url}#webpage`
         },
-        inLanguage: 'en-US',
-      
+        inLanguage: 'en-US'
       }
     ]
-  });
-  
-  
+  })
+
   // const ldJsonData = JSON.stringify(
   //    {
   //     '@context': 'https://schema.org',
@@ -308,7 +371,10 @@ const CrimeInTheCityPage = ({ title, content }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
-        <meta name="google-site-verification" content="49WAkeHVyYLOO41vqw4JPOE4QOR244MUbadgZ4k3WcE" />
+        <meta
+          name='google-site-verification'
+          content='49WAkeHVyYLOO41vqw4JPOE4QOR244MUbadgZ4k3WcE'
+        />
         <meta
           name='facebook-domain-verification'
           content='du918bycikmo1jw78wcl9ih6ziphd7'
@@ -326,7 +392,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-
+        <script src='https://www.youtube.com/iframe_api'></script>
         {/* Webpushr tracking code */}
         <script
           dangerouslySetInnerHTML={{
@@ -528,7 +594,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
           )}
         </div>
 
-        <div
+        {/* <div
           style={{
             position: 'relative',
             paddingBottom: '56.25%',
@@ -536,7 +602,9 @@ const CrimeInTheCityPage = ({ title, content }) => {
             overflow: 'hidden'
           }}
         >
-          <iframe
+          <div
+            id='youtube-player'
+            className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
             style={{
               width: '100%',
               height: '100%',
@@ -547,19 +615,32 @@ const CrimeInTheCityPage = ({ title, content }) => {
               filter:
                 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
             }}
-            className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-            frameborder='0'
-            type='text/html'
-            src={`https://geo.dailymotion.com/player/xkdl0.html?video=${
-              article && article.video
-            }&autoquality=1080p&mute=true`}
-            width='100%'
-            height='100%'
-            allowfullscreen
-            title='Dailymotion Video Player'
-            allow='autoplay'
-          ></iframe>
-        </div>
+          ></div>
+        
+        </div> */}
+ <div
+        style={{
+          position: 'relative',
+          paddingBottom: '56.25%',
+          height: 0,
+          overflow: 'hidden'
+        }}
+      >
+        <div
+          id='youtube-player'
+          className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            overflow: 'hidden',
+            filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+          }}
+        ></div>
+      </div>
+    
         <div className='max-w-4xl mx-auto mt-5'>
           {/* <Slider {...settings}>
             {article.images.map((image, index) => (
@@ -608,7 +689,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
   )
 }
 
-export default CrimeInTheCityPage;
+export default CrimeInTheCityPage
 
 async function fetchArticleData (articleId) {
   try {
