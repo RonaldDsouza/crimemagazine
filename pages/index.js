@@ -7,7 +7,7 @@ export default function Home ({ articles }) {
     <div
       className='w-full  mx-auto py-8 px-4'
       style={{
-        backgroundColor: 'rgb(192, 192, 192)'
+        backgroundColor: 'rgb(128, 128, 128)'
       }}
     >
       <Head>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styles from '@styles/video-player.module.css'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -50,16 +50,16 @@ const CrimeInTheCityPage = ({ title, content }) => {
   //   }
   // }, [videoId])
 
-  const videoIds = article && article.video; // Assuming article.video is an array of video IDs
-  const playerRef = useRef(null); // Reference to the YouTube player instance
-  const currentIndexRef = useRef(0); // Reference to keep track of the current video index
+  const videoIds = article && article.video // Assuming article.video is an array of video IDs
+  const playerRef = useRef(null) // Reference to the YouTube player instance
+  const currentIndexRef = useRef(0) // Reference to keep track of the current video index
 
   useEffect(() => {
     // Initialize the YouTube Player API
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    const tag = document.createElement('script')
+    tag.src = 'https://www.youtube.com/iframe_api'
+    const firstScriptTag = document.getElementsByTagName('script')[0]
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
     // Create the player when the API is ready
     window.onYouTubeIframeAPIReady = () => {
@@ -78,17 +78,18 @@ const CrimeInTheCityPage = ({ title, content }) => {
           onStateChange: event => {
             if (event.data === window.YT.PlayerState.ENDED) {
               // If video has ended, move to the next video or loop back to the beginning
-              currentIndexRef.current = (currentIndexRef.current + 1) % videoIds.length;
+              currentIndexRef.current =
+                (currentIndexRef.current + 1) % videoIds.length
               playerRef.current.loadVideoById({
                 videoId: videoIds[currentIndexRef.current],
                 startSeconds: 0 // Start from the beginning of the next video
-              });
+              })
             }
           }
         }
-      });
-    };
-  }, [videoIds]);
+      })
+    }
+  }, [videoIds])
 
   if (!article) {
     return (
@@ -329,7 +330,7 @@ const CrimeInTheCityPage = ({ title, content }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch {article && article.name} | Crime Magazine</title>
+        <title> {article && article.name} | Crime Magazine</title>
         <link rel='canonical' href={article && article.url} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -618,29 +619,30 @@ const CrimeInTheCityPage = ({ title, content }) => {
           ></div>
         
         </div> */}
- <div
-        style={{
-          position: 'relative',
-          paddingBottom: '56.25%',
-          height: 0,
-          overflow: 'hidden'
-        }}
-      >
         <div
-          id='youtube-player'
-          className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
           style={{
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-            left: '0px',
-            top: '0px',
-            overflow: 'hidden',
-            filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+            position: 'relative',
+            paddingBottom: '56.25%',
+            height: 0,
+            overflow: 'hidden'
           }}
-        ></div>
-      </div>
-    
+        >
+          <div
+            id='youtube-player'
+            className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
+            style={{
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              left: '0px',
+              top: '0px',
+              overflow: 'hidden',
+              filter:
+                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+            }}
+          ></div>
+        </div>
+
         <div className='max-w-4xl mx-auto mt-5'>
           {/* <Slider {...settings}>
             {article.images.map((image, index) => (
