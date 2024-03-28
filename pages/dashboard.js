@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 
 const Dashboard = () => {
   const [reportData, setReportData] = useState(null)
-  const [articlesAddedPerMonth, setArticlesAddedPerMonth] = useState(0);
-  const [articlesAddedPerWeek, setArticlesAddedPerWeek] = useState(0);
+  const [articlesAddedPerMonth, setArticlesAddedPerMonth] = useState(0)
+  const [articlesAddedPerWeek, setArticlesAddedPerWeek] = useState(0)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [authenticated, setAuthenticated] = useState(false)
@@ -53,7 +53,7 @@ const Dashboard = () => {
   //   const tagsArray = e.target.value.split(',');
   //   setNewArticle({ ...newArticle, tags: tagsArray });
   // };
-    
+
   const fetchData = async () => {
     try {
       const response = await axios.get('/api/crime')
@@ -134,7 +134,7 @@ const Dashboard = () => {
         category: '',
         sources: '',
         tags: [],
-        video:[],
+        video: [],
         audio: '',
         images: []
       })
@@ -183,20 +183,20 @@ const Dashboard = () => {
       <div>
         <h1>Login</h1>
         <input
-          type="text"
-          placeholder="Username"
+          type='text'
+          placeholder='Username'
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
         <input
-          type="password"
-          placeholder="Password"
+          type='password'
+          placeholder='Password'
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
         <button onClick={handleLogin}>Login</button>
       </div>
-    );
+    )
   }
 
   return (
@@ -366,6 +366,17 @@ const Dashboard = () => {
                 setNewArticle({ ...newArticle, articleBody: e.target.value })
               }
             ></textarea>
+            <p
+              style={{
+                color: 'black',
+                fontWeight: 'bold',
+                fontSize: '20px',
+                fontFamily: 'Poppins, sans-serif',
+                textShadow: '1px 1px 1px #000'
+              }}
+            >
+              {newArticle.articleBody}
+            </p>
             <textarea
               placeholder='Content'
               value={newArticle.content}
@@ -415,9 +426,14 @@ const Dashboard = () => {
             />
             <input
               type='text'
-              placeholder="Tags (Enter tags separated by commas)"
+              placeholder='Tags (Enter tags separated by commas)'
               value={newArticle.tags.join(',')}
-              onChange={(e) => setNewArticle({ ...newArticle, tags: e.target.value.split(',') })}
+              onChange={e =>
+                setNewArticle({
+                  ...newArticle,
+                  tags: e.target.value.split(',')
+                })
+              }
             />
             <input
               type='text'
@@ -428,7 +444,6 @@ const Dashboard = () => {
                   ...newArticle,
                   video: e.target.value.split(/[,\s]+/)
                 })
-              
               }
             />
             <input
